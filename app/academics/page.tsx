@@ -152,6 +152,12 @@ export default function AcademicsPage() {
                             <p className="text-gray-600 text-sm mb-4">English Language, Literature, Government, History, Christian Religious Studies.</p>
                             <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-xs font-bold rounded-full">Critical Thinking</span>
                         </div>
+                        {/* Commercial */}
+                        <div className="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                            <h3 className="text-xl font-bold text-navy-900 mb-3">Commercial Studies</h3>
+                            <p className="text-gray-600 text-sm mb-4">Accounting, Commerce, Economics, Business Studies, Financial Literacy.</p>
+                            <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-xs font-bold rounded-full">Business Skills</span>
+                        </div>
                         {/* Vocational */}
                         <div className="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
                             <h3 className="text-xl font-bold text-navy-900 mb-3">Vocational & Technical</h3>

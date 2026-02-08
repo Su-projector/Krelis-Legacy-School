@@ -101,33 +101,74 @@ export default function Header() {
                     </button>
                 </div>
 
-                {/* Mobile Menu */}
+
+                {/* Mobile Menu Backdrop */}
+                {isMobileMenuOpen && (
+                    <div
+                        className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transition-opacity duration-300"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        aria-hidden="true"
+                    />
+                )}
+
+                {/* Mobile Menu Drawer */}
                 <div
                     id="mobile-menu"
-                    className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    className={`fixed top-0 right-0 h-full w-[70%] max-w-sm bg-white shadow-2xl z-50 lg:hidden transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                 >
-                    <nav className="py-4 space-y-2" aria-label="Mobile navigation">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="block px-4 py-3 text-navy-500 font-medium hover:bg-gray-50 hover:text-orange-500 rounded-lg transition-colors duration-300"
+                    <div className="flex flex-col h-full">
+                        {/* Drawer Header */}
+                        <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                            <h2 className="text-navy-500 font-bold text-lg">Menu</h2>
+                            <button
+                                type="button"
                                 onClick={() => setIsMobileMenuOpen(false)}
+                                className="p-2 rounded-lg text-navy-500 hover:bg-gray-100 transition-colors duration-300"
+                                aria-label="Close menu"
                             >
-                                {link.label}
-                            </Link>
-                        ))}
-                        <div className="pt-2 px-4">
-                            <Link
-                                href="/admissions"
-                                className="block w-full text-center btn-secondary"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Apply Now
-                            </Link>
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </button>
                         </div>
-                    </nav>
+
+
+                        {/* Drawer Navigation */}
+                        <nav className="flex-1 overflow-y-auto py-4 px-2" aria-label="Mobile navigation">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="block px-4 py-3 text-navy-500 font-medium hover:bg-gray-50 hover:text-orange-500 rounded-lg transition-colors duration-300"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+
+                            {/* CTA Button */}
+                            <div className="px-4 pt-2">
+                                <Link
+                                    href="/admissions"
+                                    className="block w-full text-center btn-secondary"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    Apply Now
+                                </Link>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </header>
