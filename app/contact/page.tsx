@@ -30,7 +30,7 @@ export default function ContactPage() {
 
                             {/* Phone */}
                             <a
-                                href="tel:+2348012345678"
+                                href="tel:+234***********"
                                 className="flex items-center p-6 bg-white border-2 border-navy-500 rounded-xl hover:shadow-lg transition-shadow group"
                             >
                                 <div className="p-4 bg-orange-50 rounded-full mr-6 group-hover:bg-orange-100 transition-colors">
@@ -40,13 +40,13 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold text-gray-900">Phone Number</h3>
-                                    <p className="text-gray-600 font-medium">+234 801 234 5678</p>
+                                    <p className="text-gray-600 font-medium">+234 *** *** ****</p>
                                 </div>
                             </a>
 
                             {/* Email */}
                             <a
-                                href="mailto:info@krelislegacy.com"
+                                href="mailto:**********@gmail.com"
                                 className="flex items-center p-6 bg-white border-2 border-navy-500 rounded-xl hover:shadow-lg transition-shadow group"
                             >
                                 <div className="p-4 bg-orange-50 rounded-full mr-6 group-hover:bg-orange-100 transition-colors">
@@ -56,7 +56,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold text-gray-900">Email Address</h3>
-                                    <p className="text-gray-600 font-medium">info@krelislegacy.com</p>
+                                    <p className="text-gray-600 font-medium">********@gmail.com</p>
                                 </div>
                             </a>
 
@@ -76,8 +76,10 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="text-lg font-bold text-gray-900">School Address</h3>
                                     <p className="text-gray-600 font-medium">
-                                        123 Krelis Avenue, <br />
-                                        Education District, Lagos State.
+                                        18 Atinmo Street, Ikosi-Ketu,<br />
+                                        Lagos State.<br />
+                                        **, Aladelola Street, Ikosi-Ketu,<br />
+                                        Lagos State.
                                     </p>
                                 </div>
                             </a>
