@@ -40,7 +40,7 @@ export default function Header() {
                             <h1 className="text-navy-500 font-bold text-lg md:text-xl leading-tight">
                                 Krelis Legacy
                             </h1>
-                            <p className="text-orange-500 text-xs md:text-sm font-medium">College</p>
+                            <h1 className="text-orange-500 text-md md:text-xl font-medium">School</h1>
                         </div>
                     </Link>
 

@@ -3,8 +3,8 @@ import ContactForm from '@/components/ContactForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Contact Us - Krelis Legacy College',
-    description: 'Get in touch with Krelis Legacy College. Contact our admissions office, find our location, or send us a message.',
+    title: 'Contact Us - Krelis Legacy School',
+    description: 'Get in touch with Krelis Legacy School. Contact our admissions office, find our location, or send us a message.',
 };
 
 export default function ContactPage() {
