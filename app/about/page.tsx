@@ -101,7 +101,7 @@ export default function AboutPage() {
                                 />
                                 */}
                             </div>
-                            <h3 className="text-xl font-bold text-navy-900">Dr. Sarah Krelis</h3>
+                            <h3 className="text-xl font-bold text-navy-900">Mr. Abayomi O. Kareem</h3>
                             <p className="text-orange-500 font-medium">Director & Founder</p>
                         </div>
 
