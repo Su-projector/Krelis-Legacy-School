@@ -76,9 +76,9 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="text-lg font-bold text-gray-900">School Address</h3>
                                     <p className="text-gray-600 font-medium">
-                                        18 Atinmo Street, Ikosi-Ketu,<br />
+                                        18 Atinmo Street, Ikosi-Ketu,
                                         Lagos State.<br />
-                                        90, Aladelola Street, Ikosi-Ketu,<br />
+                                        90, Aladelola Street, Ikosi-Ketu,
                                         Lagos State.
                                     </p>
                                 </div>
