@@ -133,7 +133,7 @@ export default function Footer() {
                                 <p className="text-gray-300">
                                     18 Atinmo Street, Ikosi-Ketu,<br />
                                     Lagos, Nigeria 100001<br />
-                                    **, Aladelola Street, Ikosi-Ketu,<br />
+                                    90, Aladelola Street, Ikosi-Ketu,<br />
                                     Lagos, Nigeria 100001
                                 </p>
                             </div>
