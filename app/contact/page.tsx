@@ -78,7 +78,7 @@ export default function ContactPage() {
                                     <p className="text-gray-600 font-medium">
                                         18 Atinmo Street, Ikosi-Ketu,<br />
                                         Lagos State.<br />
-                                        **, Aladelola Street, Ikosi-Ketu,<br />
+                                        90, Aladelola Street, Ikosi-Ketu,<br />
                                         Lagos State.
                                     </p>
                                 </div>
