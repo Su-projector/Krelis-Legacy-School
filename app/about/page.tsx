@@ -110,10 +110,10 @@ export default function AboutPage() {
                             <h2 className="text-3xl font-bold text-navy-900 mb-6">Welcome from the Director</h2>
                             <div className="text-gray-600 space-y-4 leading-relaxed">
                                 <p>
-                                    Welcome to Krelis Legacy College! It is my profound privilege to lead this exceptional community of learners, educators, and families. Since our inception, we have been guided by a singular mission: to nurture the unique potential within every child.
+                                    Welcome to Krelis Legacy School! It is my profound privilege to lead this exceptional community of learners, educators, and families. Since our inception, we have been guided by a singular mission: to nurture the unique potential within every child.
                                 </p>
                                 <p>
-                                    At KLC, we believe that education is not just about academic rigor but about building character, resilience, and a lifelong love for learning. Our dedicated faculty works tirelessly to create an environment where students feel safe to explore, question, and grow.
+                                    At KLS, we believe that education is not just about academic rigor but about building character, resilience, and a lifelong love for learning. Our dedicated faculty works tirelessly to create an environment where students feel safe to explore, question, and grow.
                                 </p>
                                 <p>
                                     We invite you to join us on this exciting journey. Together, we are building a legacy of excellence for generations to come.
