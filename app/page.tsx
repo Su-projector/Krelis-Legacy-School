@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Krelis Legacy College - Welcome',
-    description: 'Welcome to Krelis Legacy College. Resumption Date: 15th Sept 2025.',
+    description: 'Welcome to Krelis Legacy School. Resumption Date: 15th Sept 2025.',
 };
 
 export default function HomePage() {
