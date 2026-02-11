@@ -63,7 +63,7 @@ export default function Footer() {
                             </div>
                             <div>
                                 <h2 className="font-bold text-xl">Krelis Legacy</h2>
-                                <p className="text-orange-400 text-sm font-medium">College</p>
+                                <p className="text-orange-400 text-sm font-medium">School</p>
                             </div>
                         </div>
                         <p className="text-gray-300 text-sm leading-relaxed mb-6">
