@@ -16,7 +16,7 @@ export default function HomePage() {
             {/* HERO SECTION */}
             <section className="text-center pt-8 pb-4 px-4 bg-white">
                 <h1 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
-                    Welcome to Krelis<br />Legacy College
+                    Welcome to Krelis<br />Legacy School
                 </h1>
 
                 {/* School Building Image */}
