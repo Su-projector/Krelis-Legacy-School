@@ -20,6 +20,7 @@ export default function AdmissionFormPage() {
     });
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -33,17 +34,52 @@ export default function AdmissionFormPage() {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('submitting');
+        setErrorMessage('');
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus('success');
-            // Reset status after 5 seconds but keep visible for user feedback
-            setTimeout(() => setStatus('idle'), 5000);
-            handleReset(); // Clear form on success
-        }, 2000);
+        try {
+            const form = new FormData();
+            form.append('fullName', formData.fullName);
+            form.append('dateOfBirth', formData.dateOfBirth);
+            form.append('gender', formData.gender);
+            form.append('parentName', formData.parentName);
+            form.append('email', formData.email);
+            form.append('phone', formData.phone);
+            form.append('address', formData.address);
+            form.append('classApplyingFor', formData.classApplyingFor);
+            form.append('previousSchool', formData.previousSchool);
+
+            // Append files
+            if (formData.birthCertificate) {
+                form.append('birthCertificate', formData.birthCertificate);
+            }
+            if (formData.lastSchoolResult) {
+                form.append('lastSchoolResult', formData.lastSchoolResult);
+            }
+            if (formData.passportPhotograph) {
+                form.append('passportPhotograph', formData.passportPhotograph);
+            }
+
+            const response = await fetch('/api/admission', {
+                method: 'POST',
+                body: form,
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                handleReset();
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+                setErrorMessage('Failed to submit application. Please try again.');
+            }
+        } catch (error) {
+            setStatus('error');
+            setErrorMessage('An error occurred. Please check your connection and try again.');
+            console.error('Form submission error:', error);
+        }
     };
 
     const handleReset = () => {
@@ -338,6 +374,14 @@ export default function AdmissionFormPage() {
                             <div className="p-6 bg-green-50 text-green-800 rounded-xl border border-green-200 text-center animate-fade-in-up shadow-sm">
                                 <h4 className="text-xl font-bold mb-2">Application Submitted Successfully!</h4>
                                 <p>Thank you for applying to Krelis Legacy College. Our admissions team will review your application and contact you shortly via email.</p>
+                            </div>
+                        )}
+
+                        {/* Error Message */}
+                        {status === 'error' && (
+                            <div className="p-6 bg-red-50 text-red-800 rounded-xl border border-red-200 text-center shadow-sm">
+                                <h4 className="text-xl font-bold mb-2">Submission Failed</h4>
+                                <p>{errorMessage}</p>
                             </div>
                         )}
 

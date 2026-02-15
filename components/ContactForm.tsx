@@ -11,23 +11,43 @@ export default function ContactForm() {
     });
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('submitting');
+        setErrorMessage('');
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus('success');
-            setFormData({ name: '', phone: '', email: '', message: '' });
-            // Reset status after 5 seconds
-            setTimeout(() => setStatus('idle'), 5000);
-        }, 1500);
+        try {
+            const form = new FormData();
+            form.append('name', formData.name);
+            form.append('phone', formData.phone);
+            form.append('email', formData.email);
+            form.append('message', formData.message);
+
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                body: form,
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', phone: '', email: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+                setErrorMessage('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            setStatus('error');
+            setErrorMessage('An error occurred. Please check your connection and try again.');
+            console.error('Form submission error:', error);
+        }
     };
 
     return (
@@ -111,6 +131,13 @@ export default function ContactForm() {
                 {status === 'success' && (
                     <div className="p-4 bg-green-50 text-green-700 rounded-lg border border-green-200 text-center animate-pulse">
                         Message sent successfully! We will contact you soon.
+                    </div>
+                )}
+
+                {/* Error Message */}
+                {status === 'error' && (
+                    <div className="p-4 bg-red-50 text-red-700 rounded-lg border border-red-200 text-center">
+                        {errorMessage}
                     </div>
                 )}
 
